@@ -1,0 +1,55 @@
+.Container {
+  width: 100vw;
+  overflow-x: hidden;
+}
+/* Navigation */
+.nav {
+  display: flex;
+  padding-top: 5px;
+  padding-left: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBoxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -20px;
+  width: 200px;
+  height: 40px;
+  background-color: #00b4c5;
+  border-bottom-left-radius: 20px;
+}
+.navBoxContainer a {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+/* Hero Section */
+.Hero {
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  height: 90vh;
+  align-items: center;
+}
+.HeroTexts h1 {
+  font-size: 100px;
+  color: #00b4c5;
+}
+
+.HeroTexts p {
+  width: 500px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.Hero button {
+  width: 170px;
+  height: 40px;
+  background-color: #00b4c5;
+  color: white;
+  margin-top: 20px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
