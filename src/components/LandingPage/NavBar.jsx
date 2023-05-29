@@ -12,7 +12,7 @@ function NavBar() {
         {/* <Image className="phq-9 logo" src="/phq-9.png" alt="phq-9 logo" /> */}
         <img src="/phq-9.png" alt="" width="70px" />
         <div className={LandingPage.navBoxContainer}>
-          <a className={poppins.className} href="#">
+          <a className={poppins.className} href="/signUp">
             Login/Sign up
           </a>
         </div>
