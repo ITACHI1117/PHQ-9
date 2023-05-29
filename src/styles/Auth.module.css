@@ -12,12 +12,28 @@
   padding-left: 10px;
   padding-top: 10px;
 }
+.Logo2 {
+  position: absolute;
+  right: 10px;
+  padding-top: 10px;
+}
 .LogoAndImg {
   width: 50%;
   height: 100vh;
   background-color: #e5e5e6;
 }
+.LogoAndImg2 {
+  width: 50%;
+  height: 100vh;
+  background-color: #dcdddf;
+}
+
 .LogoAndImg .NurseImg {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+.LogoAndImg2 .NurseImg {
   width: 100%;
   height: 100%;
   object-fit: scale-down;

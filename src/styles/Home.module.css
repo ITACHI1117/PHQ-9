@@ -1,0 +1,49 @@
+.LogoAndGreeting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.LogoAndGreeting h2 {
+  padding-left: 10px;
+}
+.navBoxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -20px;
+  width: 350px;
+  height: 40px;
+  background-color: #00b4c5;
+  border-bottom-left-radius: 20px;
+}
+.navBoxContainer ul {
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+}
+.navBoxContainer li {
+  list-style: none;
+}
+.navBoxContainer a {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.HeroSection {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.HeroSection button {
+  width: 250px;
+  height: 40px;
+  background-color: #00b4c5;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}

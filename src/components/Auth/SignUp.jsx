@@ -46,7 +46,7 @@ function SignUp() {
           </form>
           <button className={poppins.className}>Sign Up</button>
           <h1 className={poppins.className}>or</h1>
-          <a href="#" className={poppins.className}>
+          <a href="/login" className={poppins.className}>
             Login
           </a>
         </div>
