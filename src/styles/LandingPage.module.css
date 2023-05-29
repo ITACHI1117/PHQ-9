@@ -53,3 +53,68 @@
   font-size: 15px;
   cursor: pointer;
 }
+/* WebBaseSection */
+.WebBaseSection {
+  margin-top: 150px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.WebBaseSection h1 {
+  font-size: 70px;
+  color: #00b4c5;
+  font-weight: 700;
+}
+.WebBaseSection p {
+  text-align: center;
+  font-size: 20px;
+  width: 600px;
+  font-weight: 500;
+}
+/* SectionTwo */
+.SectionTwo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #f7f7f7;
+  margin-top: 100px;
+  height: 400px;
+}
+.CircleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.CircleOne {
+  width: 250px;
+  background-color: white;
+  border: 20px solid #00b4c5;
+  border-radius: 100%;
+}
+.CircleContainer h2 {
+  margin-top: 15px;
+  color: #00b4c5;
+  font-weight: 700;
+  font-size: 20px;
+}
+/* Instructions */
+.Instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.Instructions h1 {
+  color: #00b4c5;
+  font-size: 70px;
+}
+.Instructions li {
+  list-style: decimal;
+  font-size: 20px;
+}

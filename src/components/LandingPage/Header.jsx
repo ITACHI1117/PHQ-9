@@ -2,6 +2,9 @@ import React from "react";
 import NavBar from "./NavBar";
 import LandingPage from "@/styles/LandingPage.module.css";
 import { Poppins } from "next/font/google";
+import WebBaseSection from "./WebBaseSection";
+import SectionTwo from "./SectionTwo";
+import Instructions from "./Instructions";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,6 +28,9 @@ function Header() {
           <img src="/HeroNurse.png" alt="" width="500px" />
         </div>
       </div>
+      <WebBaseSection />
+      <SectionTwo />
+      <Instructions />
     </div>
   );
 }
