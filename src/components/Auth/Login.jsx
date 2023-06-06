@@ -26,7 +26,10 @@ function Login() {
           </form>
           <button className={poppins.className}>Login</button>
           <h1 className={poppins.className}>or</h1>
-          <a href="/signUp" className={poppins.className}>
+          <a
+            onClick={() => router.push("/login")}
+            className={poppins.className}
+          >
             Sign Up
           </a>
         </div>
