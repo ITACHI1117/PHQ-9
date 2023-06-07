@@ -30,8 +30,15 @@ export const DataProvider = ({ children }) => {
     const notify = () =>
       toast.success("Signed Up", {
         icon: "🎉",
-
         position: toast.POSITION.TOP_CENTER,
+        progressStyle: { backgroundColor: "blue" },
+        hideProgressBar: true,
+        style: {
+          backgroundColor: "#00b4c5",
+          fontSize: "15px",
+          color: "white",
+          textAlign: "center",
+        },
       });
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
@@ -73,7 +80,14 @@ export const DataProvider = ({ children }) => {
       toast.success("Welcome", {
         icon: "🎉",
         position: toast.POSITION.TOP_CENTER,
-        progressClassName: "fancy-progress-bar",
+        progressStyle: { backgroundColor: "blue" },
+        hideProgressBar: true,
+        style: {
+          backgroundColor: "#00b4c5",
+          fontSize: "15px",
+          color: "white",
+          textAlign: "center",
+        },
       });
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
@@ -82,6 +96,8 @@ export const DataProvider = ({ children }) => {
         setUser(userCredential.user);
         // setSigned(true);
         setLoading(false);
+        setEmail("");
+        setPassword("");
         console.log("Done");
         notify();
         setTimeout(() => {
