@@ -23,20 +23,22 @@ export const DataProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
+  const [loading, setLoading] = useState(null);
 
   const signIn = () => {
+    // notifying user
     const notify = () =>
       toast.success("Signed Up", {
         icon: "🎉",
 
         position: toast.POSITION.TOP_CENTER,
       });
-    // setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password).then(
-      (userCredential) => {
+    setLoading(true);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // setLoading(false);
+        setLoading(false);
         setUser(user);
         set(reference(database, "users/" + userId), {
           id: userId,
@@ -56,10 +58,13 @@ export const DataProvider = ({ children }) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode);
+            setLoading(false);
             // ..
           });
-      }
-    );
+      })
+      .catch((error) => {
+        setLoading(false);
+      });
   };
 
   //   login Function
@@ -70,23 +75,23 @@ export const DataProvider = ({ children }) => {
         position: toast.POSITION.TOP_CENTER,
         progressClassName: "fancy-progress-bar",
       });
-    // setLoading(true);
+    setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         setUser(userCredential.user);
         // setSigned(true);
-        // setLoading(false);
+        setLoading(false);
         console.log("Done");
         notify();
         setTimeout(() => {
           router.push("/home");
-        }, 5000);
+        }, 1000);
       })
       .catch((error) => {
         // setError(error.code);
         console.log(error.code);
-        // setLoading(false);
+        setLoading(false);
       });
   }
 
@@ -113,6 +118,7 @@ export const DataProvider = ({ children }) => {
         email,
         password,
         user,
+        loading,
         setFirstName,
         setLastName,
         setEmail,

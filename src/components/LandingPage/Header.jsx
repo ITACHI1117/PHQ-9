@@ -25,7 +25,7 @@ function Header() {
           <button className={poppins.className}>Take Test</button>
         </div>
         <div className={LandingPage.HeroImage}>
-          <img src="/HeroNurse.png" alt="" width="500px" />
+          <img src="/HeroNurse.png" alt="" width="550px" />
         </div>
       </div>
       <WebBaseSection />

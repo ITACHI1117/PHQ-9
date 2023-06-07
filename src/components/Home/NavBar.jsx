@@ -2,9 +2,20 @@ import Image from "next/image";
 import LandingPage from "@/styles/LandingPage.module.css";
 import Home from "@/styles/Home.module.css";
 import DataContext from "../../context/DataContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Poppins } from "next/font/google";
+import { database } from "../../../firebase";
+import {
+  ref,
+  child,
+  get,
+  serverTimestamp,
+  set,
+  push,
+  onDisconnect,
+  onValue,
+} from "firebase/database";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -15,12 +26,24 @@ function NavBar() {
     logOut,
     user,
   } = useContext(DataContext);
+
+  const [allUsers, setAllUsers] = useState();
+
   useEffect(() => {
-    if (!user) {
-      router.replace("/login");
-    }
-  }, [user]);
-  console.log(user);
+    const dbRef = ref(database);
+    get(child(dbRef, `users/`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setAllUsers(Object.values(snapshot.val()));
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoadError(error);
+      });
+  });
 
   return (
     <>
