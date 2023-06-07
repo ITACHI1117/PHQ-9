@@ -84,3 +84,6 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+.fancy-progress-bar {
+  color: #00000030;
+}

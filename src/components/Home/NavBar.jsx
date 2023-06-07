@@ -1,12 +1,27 @@
 import Image from "next/image";
 import LandingPage from "@/styles/LandingPage.module.css";
 import Home from "@/styles/Home.module.css";
-import React from "react";
+import DataContext from "../../context/DataContext";
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 function NavBar() {
+  const router = useRouter();
+  const {
+    // function
+    logOut,
+    user,
+  } = useContext(DataContext);
+  useEffect(() => {
+    if (!user) {
+      router.replace("/login");
+    }
+  }, [user]);
+  console.log(user);
+
   return (
     <>
       <nav className={LandingPage.nav}>
@@ -23,7 +38,7 @@ function NavBar() {
               </a>
             </li>
             <li>
-              <a className={poppins.className} href="#">
+              <a on onClick={() => logOut(user)} className={poppins.className}>
                 Sign Out
               </a>
             </li>

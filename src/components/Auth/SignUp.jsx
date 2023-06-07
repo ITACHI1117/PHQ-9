@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Auth from "@/styles/Auth.module.css";
 import { Poppins, Shadows_Into_Light_Two } from "next/font/google";
 import { useContext } from "react";
 import DataContext from "../../context/DataContext";
-import { auth, storage, database, reference } from "../../../firebase";
-import { set, get, child, update } from "firebase/database";
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -34,6 +34,7 @@ function SignUp() {
 
   return (
     <>
+      <ToastContainer limit={1} />
       <div className={Auth.Container}>
         <div className={Auth.LogoAndImg}>
           <img className={Auth.Logo} src="/phq-9.png" alt="" width="70px" />

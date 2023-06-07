@@ -53,6 +53,12 @@
   font-size: 15px;
   cursor: pointer;
 }
+.HeroImage {
+  height: 100vh;
+  display: flex;
+  align-items: end;
+  z-index: -10;
+}
 /* WebBaseSection */
 .WebBaseSection {
   margin-top: 150px;
