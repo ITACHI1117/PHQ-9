@@ -12,11 +12,12 @@ const poppins = Poppins({
 });
 
 function Login() {
-  const { LogIn, setEmail, setPassword, loading } = useContext(DataContext);
+  const { LogIn, setEmail, setPassword, loading, user } =
+    useContext(DataContext);
   const router = useRouter();
   return (
     <>
-      <ToastContainer limit={1} />
+      <ToastContainer />
       <div className={Auth.Container}>
         <div className={Auth.signUpForm}>
           <h1 className={poppins.className}>Login</h1>

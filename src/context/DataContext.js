@@ -5,6 +5,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
+  updatePhoneNumber,
 } from "firebase/auth";
 import { auth, storage, database, reference } from "../../firebase";
 import { set, get, child, update } from "firebase/database";
@@ -40,9 +42,22 @@ export const DataProvider = ({ children }) => {
           textAlign: "center",
         },
       });
+    const errorMessage = (message) =>
+      toast.success(message, {
+        icon: "🎉",
+        position: toast.POSITION.TOP_CENTER,
+        progressStyle: { backgroundColor: "blue" },
+        hideProgressBar: true,
+        style: {
+          backgroundColor: "#00b4c5",
+          fontSize: "15px",
+          color: "white",
+          textAlign: "center",
+        },
+      });
     setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+    createUserWithEmailAndPassword(auth, email, password).then(
+      (userCredential) => {
         // Signed in
         const user = userCredential.user;
         setLoading(false);
@@ -55,29 +70,43 @@ export const DataProvider = ({ children }) => {
           phone: phone,
         })
           .then(() => {
+            updateProfile(auth.currentUser, {
+              displayName: userId,
+            });
+          })
+          .catch((error) => {
+            errorMessage(error.code);
+            setLoading(false);
+            // ..
+          })
+          .then(() => {
             console.log("Done");
             notify();
             setTimeout(() => {
               router.push("/login");
-            }, 5000);
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode);
-            setLoading(false);
-            // ..
+            }, 2000);
           });
-      })
-      .catch((error) => {
-        setLoading(false);
-      });
+      }
+    );
   };
 
   //   login Function
   function LogIn() {
     const notify = () =>
       toast.success("Welcome", {
+        icon: "🎉",
+        position: toast.POSITION.TOP_CENTER,
+        progressStyle: { backgroundColor: "blue" },
+        hideProgressBar: true,
+        style: {
+          backgroundColor: "#00b4c5",
+          fontSize: "15px",
+          color: "white",
+          textAlign: "center",
+        },
+      });
+    const errorMessage = (message) =>
+      toast.success(message, {
         icon: "🎉",
         position: toast.POSITION.TOP_CENTER,
         progressStyle: { backgroundColor: "blue" },
@@ -101,11 +130,12 @@ export const DataProvider = ({ children }) => {
         console.log("Done");
         notify();
         setTimeout(() => {
-          router.push("/home");
-        }, 1000);
+          router.push(`/Home/${userCredential.user.displayName}`);
+        }, 2000);
       })
       .catch((error) => {
         // setError(error.code);
+        errorMessage(error.code);
         console.log(error.code);
         setLoading(false);
       });
