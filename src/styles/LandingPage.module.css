@@ -24,6 +24,7 @@
   color: white;
   font-size: 15px;
   text-decoration: none;
+  cursor: pointer;
 }
 /* Hero Section */
 .Hero {
@@ -61,19 +62,22 @@
 }
 /* WebBaseSection */
 .WebBaseSection {
-  margin-top: 150px;
-  margin-bottom: 20px;
+  padding-top: 100px;
+  margin-bottom: 0px;
   display: flex;
+  background-color: #00b4c5;
+  height: 400px;
   flex-direction: column;
   align-items: center;
 }
 .WebBaseSection h1 {
   font-size: 70px;
-  color: #00b4c5;
+  color: white;
   font-weight: 700;
 }
 .WebBaseSection p {
   text-align: center;
+  color: white;
   font-size: 20px;
   width: 600px;
   font-weight: 500;
@@ -85,9 +89,9 @@
   justify-content: space-around;
   padding-left: 40px;
   padding-right: 40px;
-  background-color: #f7f7f7;
-  margin-top: 100px;
-  height: 400px;
+  background-color: #00b4c5;
+  padding-top: 30px;
+  height: 450px;
 }
 .CircleContainer {
   display: flex;
@@ -98,12 +102,12 @@
 .CircleOne {
   width: 250px;
   background-color: white;
-  border: 20px solid #00b4c5;
+  border: 20px solid white;
   border-radius: 100%;
 }
 .CircleContainer h2 {
   margin-top: 15px;
-  color: #00b4c5;
+  color: white;
   font-weight: 700;
   font-size: 20px;
 }
@@ -116,6 +120,7 @@
   margin-top: 100px;
   margin-bottom: 50px;
 }
+
 .Instructions h1 {
   color: #00b4c5;
   font-size: 70px;
@@ -123,4 +128,133 @@
 .Instructions li {
   list-style: decimal;
   font-size: 20px;
+}
+/* Testimonials */
+.TestimonialContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+.Testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.Testimonials h1 {
+  color: #00b4c5;
+  font-size: 70px;
+  padding-bottom: 200px;
+}
+.Testimony {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b4c5;
+  border-radius: 10px;
+  width: 350px;
+  height: 400px;
+}
+.Testimony img {
+  border-radius: 100%;
+  margin-top: -200px;
+}
+.Testimony h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
+.Testimony p {
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+.Testimony2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b4c5;
+  border-radius: 10px;
+  width: 350px;
+  height: 400px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.Testimony2 img {
+  border-radius: 100%;
+  margin-top: -200px;
+}
+.Testimony2 h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
+.Testimony2 p {
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+.copyright {
+  margin-top: 100px;
+  width: 100vw;
+  background-color: #00b4c5;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.copyright p {
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+}
+@media screen and (max-width: 900px) {
+  .navBoxContainer {
+    width: 140px;
+    height: 35px;
+  }
+  .navBoxContainer a {
+    font-size: 12px;
+  }
+  /* Hero */
+  .Hero {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .HeroTexts h1 {
+    font-size: 70px;
+    color: #00b4c5;
+  }
+
+  .HeroTexts p {
+    width: 500px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .Hero button {
+    width: 170px;
+    height: 40px;
+    background-color: #00b4c5;
+    color: white;
+    margin-top: 20px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .HeroImage {
+    width: 100px;
+    height: 40vh;
+    display: flex;
+    align-items: end;
+  }
 }

@@ -5,6 +5,8 @@ import { Poppins } from "next/font/google";
 import WebBaseSection from "./WebBaseSection";
 import SectionTwo from "./SectionTwo";
 import Instructions from "./Instructions";
+import Testimonials from "./Testimonials";
+import CopyRight from "./CopyRight";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,6 +33,8 @@ function Header() {
       <WebBaseSection />
       <SectionTwo />
       <Instructions />
+      <Testimonials />
+      <CopyRight />
     </div>
   );
 }
